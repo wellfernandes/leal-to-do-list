@@ -1,2 +1,13 @@
+@import "assets/styles/index.css";
 @import "~materialize-css/dist/css/materialize.min.css";
-@import "~material-icons/iconfont/material-icons.css"
+@import "~material-icons/iconfont/material-icons.css";
+
+
+.bg{
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 15%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
