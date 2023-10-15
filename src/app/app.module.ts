@@ -7,6 +7,8 @@ import { HomePageComponentComponent } from './components/home-page-component/hom
 import { HeaderComponentComponent } from './components/header-component/header-component.component';
 import { FooterComponentComponent } from './components/footer-component/footer-component.component';
 import { DynamicBackgroundImageComponentComponent } from './components/dynamic-background-image-component/dynamic-background-image-component.component';
+import { RegistrationFormComponentComponent } from './components/registration-form-component/registration-form-component.component';
+import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { DynamicBackgroundImageComponentComponent } from './components/dynamic-b
     HomePageComponentComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
-    DynamicBackgroundImageComponentComponent
+    DynamicBackgroundImageComponentComponent,
+    RegistrationFormComponentComponent,
+    RegistrationComponentComponent
   ],
   imports: [
     BrowserModule,

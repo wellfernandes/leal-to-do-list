@@ -7,10 +7,12 @@ import * as M from 'materialize-css'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {   
+  ngOnInit(): void {
+    var instances;
+       
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems);
+      instances = M.Sidenav.init(elems);
     });
   }
 

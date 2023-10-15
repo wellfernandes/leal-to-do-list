@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dynamic-background-image-component.component.css']
 })
 export class DynamicBackgroundImageComponentComponent implements OnInit{
-  imageURL: string = './assets/images/bg-to-do-list.jpg';
+  imageURL: string = './assets/images/bg-leal-todo-list.jpg';
 
   constructor(){}
 
   getBgImage(){
     return{
       'background-image':
-      'linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .8)), url(' + this.imageURL + ')',
+      'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8)), url(' + this.imageURL + ')',
     };
   }
 

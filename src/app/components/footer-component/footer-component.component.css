@@ -5,9 +5,10 @@
 }
 
 .page-footer {
+  background-color: #F60069;
   color: #ffffff;
-  padding: 10px 0;
-  position: fixed;
+  padding: 20px;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
