@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-registration-component',
   templateUrl: './registration-component.component.html',
-  styleUrls: ['./registration-component.component.css']
+  styleUrls: ['./registration-component.component.css'],
 })
-export class RegistrationComponentComponent {
-
-}
+export class RegistrationComponentComponent {}

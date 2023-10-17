@@ -8,7 +8,7 @@ describe('DynamicBackgroundImageComponentComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DynamicBackgroundImageComponentComponent]
+      declarations: [DynamicBackgroundImageComponentComponent],
     });
     fixture = TestBed.createComponent(DynamicBackgroundImageComponentComponent);
     component = fixture.componentInstance;
