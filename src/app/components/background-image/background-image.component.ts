@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-background-image-component',
-  templateUrl: './dynamic-background-image-component.component.html',
-  styleUrls: ['./dynamic-background-image-component.component.css']
+  templateUrl: './background-image.component.html',
+  styleUrls: ['./background-image.component.css']
 })
-export class DynamicBackgroundImageComponentComponent implements OnInit{
+export class BackgroundImageComponent implements OnInit{
   imageURL: string = './assets/images/bg-leal-todo-list.jpg';
 
   constructor(){}
