@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-listing-component',
+  selector: 'app-listing',
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.css'],
 })

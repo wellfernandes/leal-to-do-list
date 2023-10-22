@@ -5,23 +5,23 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponentComponent } from './components/header-component/header-component.component';
-import { FooterComponentComponent } from './components/footer-component/footer-component.component';
-import { DynamicBackgroundImageComponentComponent } from './components/dynamic-background-image-component/dynamic-background-image-component.component';
-import { RegistrationFormComponentComponent } from './components/registration-form-component/registration-form-component.component';
-import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
-import { ListingComponentComponent } from './components/listing-component/listing-component.component';
-import { ListItemsComponentComponent } from './components/list-items-component/list-items-component.component';
+import { HeaderComponentComponent } from './components/header/header-component.component';
+import { FooterComponentComponent } from './components/footer/footer-component.component';
+import { BackgroundImageComponent } from './components/background-image/background-image.component';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { ListingComponent } from './components/listing/listing.component';
+import { ListItemsComponentComponent } from './components/list-items/list-items-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
-    DynamicBackgroundImageComponentComponent,
-    RegistrationFormComponentComponent,
-    RegistrationComponentComponent,
-    ListingComponentComponent,
+    BackgroundImageComponent,
+    RegistrationFormComponent,
+    RegistrationComponent,
+    ListingComponent,
     ListItemsComponentComponent,
   ],
   imports: [

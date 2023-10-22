@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registration-form-component',
+  selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.css'],
 })
@@ -12,7 +12,6 @@ export class RegistrationFormComponent {
 
   regex = /^(?!.*Tarefa)(?=.*[a-zA-Z])[A-Za-z0-9\s]+$/i;
   constructor(private router: Router) {}
-
   taskRegistration() {
     if (!(this.taskName === '')) {
       if (this.regex.test(this.taskName) && !this.taskName.includes('Tarefa')) {
@@ -28,7 +27,6 @@ export class RegistrationFormComponent {
     }
     window.alert('\nO Nome não pode ser vazio.');
   }
-
   taskCancel() {
     console.log('\n\nCadastro de Tarefa Cancelada');
     this.clearTaskName();
