@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class BackgroundImageComponent implements OnInit{
   imageURL: string = './assets/images/bg-leal-todo-list.jpg';
   constructor(){}
+  ngOnInit(): void {}
   getBgImage(){
     return{
       'background-image':
       'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8)), url(' + this.imageURL + ')',
     };
   }
-  ngOnInit(): void {}
 }

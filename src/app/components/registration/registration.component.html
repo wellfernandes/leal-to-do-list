@@ -1,1 +1,2 @@
-  <app-registration-form (taskAdded)="addTask($event)"></app-registration-form>
+<h2 class="header center-align">{{ AppTexts.REGISTRATION_PAGE_TITLE }}</h2>
+<app-registration-form (taskAdded)="addTask($event.name, $event.priority)"></app-registration-form>

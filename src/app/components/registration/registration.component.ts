@@ -2,6 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { RegistrationFormComponent } from "../registration-form/registration-form.component";
 import { Task } from "../../models/task";
 import { TaskService } from "../../services/task.service";
+import {AppTexts} from "../../constants/appTexts.constants";
 
 @Component({
   selector: 'app-registration',
@@ -13,13 +14,9 @@ export class RegistrationComponent {
   @ViewChild(RegistrationFormComponent) childComponent!: RegistrationFormComponent;
 
   counterId: number = 1;
-  newTask: Task = new Task(this.counterId, '');
   constructor(private taskService: TaskService) {}
-  addTask(taskName: string) {
-    this.newTask.name = taskName;
-    this.newTask.id = this.counterId
-
-    this.taskService.addTask(this.newTask);
+  addTask(taskName: string, taskPriority: string) {
+    this.taskService.addTask(new Task(this.counterId, taskName, taskPriority));
     this.counterId++;
 
     window.alert('Tarefa ' + taskName + ' cadastrada!');
@@ -28,4 +25,6 @@ export class RegistrationComponent {
   clearTaskNameInRegistrationForm() {
     this.childComponent.clearTaskName();
   }
+
+    protected readonly AppTexts = AppTexts;
 }

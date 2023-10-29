@@ -1,10 +1,17 @@
 <div class="row">
   <div class="col s12 m8 offset-m2">
-    <h2 class="header center-align"></h2>
     <div class="card">
       <div class="card-content">
-        <ul>
-          <li *ngFor="let task of tasks">{{ task }}</li>
+        <ul class="collection with-header">
+          <li class="collection-item" *ngFor="let task of tasks">
+            <div class="icon-container">
+              <a (click)="delete(task.id)" class="secondary-content"><i class="material-icons">delete</i></a>
+              <a (click)="edit(task.id)" class="secondary-content"><i class="material-icons">edit</i></a>
+            </div>
+            <b>ID:</b> {{ task.id }} <br>
+            <b>Nome:</b> {{ task.name }} <br>
+            <b>Prioridade:</b> {{ task.priority }} <br>
+          </li>
         </ul>
       </div>
     </div>

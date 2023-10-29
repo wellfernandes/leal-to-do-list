@@ -1,11 +1,12 @@
 @import "assets/styles/index.css";
-@import "~materialize-css/dist/css/materialize.min.css";
-@import "~material-icons/iconfont/material-icons.css";
+@import "materialize-css/dist/css/materialize.min.css";
+@import "material-icons/iconfont/material-icons.css";
 
   main {
-    padding: 0px;
+    margin-bottom: 120px;
+    overflow: hidden;
   }
 
   body{
-   background-color: #f7f7f7; 
+   background-color: #f7f7f7;
   }

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center-align">{{ AppTexts.EDIT_PAGE_TITLE }}</h2>
+        <div class="card">
+            <div class="card-content">
+                <ul class="collection with-header">
+                    <li>
+                        <b>ID:</b> {{ task?.id }} <br>
+                        <b>Nome:</b>
+                        <input [(ngModel)]="updatedTask.name" type="text">
+                        <br>
+                        <b>Prioridade:</b>
+                        <br>
+                        <br>
+                        <a class="dropdown-trigger btn" routerLink='#' data-target='dropdown1'>
+                           {{ updatedTask.priority }} <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                        <ul  id='dropdown1' class="dropdown-content">
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a (click)="changePriority(Priority.TASK_PRIORIRY_HIGH)">{{ Priority.TASK_PRIORIRY_HIGH }}</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a (click)="changePriority(Priority.TASK_PRIORIRY_MEDIUM)">{{ Priority.TASK_PRIORIRY_MEDIUM }}</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a (click)="changePriority(Priority.TASK_PRIORIRY_LOW)">{{ Priority.TASK_PRIORIRY_LOW }}</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                        </ul>
+                        <br>
+                        <br>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col s6 center-align">
+                    <button class="btn waves-effect waves-light" type="submit" (click)="updateTask()">
+                        Atualizar
+                        <i class="material-icons right">save</i>
+                    </button>
+                </div>
+                <div class="col s6 center-align">
+                    <button class="btn waves-effect waves-light red" type="button" (click)="updateCancel()">
+                        Cancelar
+                        <i class="material-icons right">cancel</i>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

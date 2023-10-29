@@ -5,24 +5,26 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponentComponent } from './components/header/header-component.component';
-import { FooterComponentComponent } from './components/footer/footer-component.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { BackgroundImageComponent } from './components/background-image/background-image.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ListingComponent } from './components/listing/listing.component';
-import { ListItemsComponentComponent } from './components/list-items/list-items-component.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
+import { EditingComponent } from './components/editing/editing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponentComponent,
-    FooterComponentComponent,
+    HeaderComponent,
+    FooterComponent,
     BackgroundImageComponent,
     RegistrationFormComponent,
     RegistrationComponent,
     ListingComponent,
-    ListItemsComponentComponent,
+    ListItemsComponent,
+    EditingComponent,
   ],
   imports: [
     FormsModule,

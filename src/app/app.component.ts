@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as M from 'materialize-css';
+import {AppTexts} from "./constants/appTexts.constants";
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,5 @@ export class AppComponent implements OnInit {
     });
   }
 
-  title = 'Leal To Do List';
+  title = AppTexts.APP_NAME;
 }

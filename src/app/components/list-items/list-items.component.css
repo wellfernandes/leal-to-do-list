@@ -1,0 +1,10 @@
+.icon-container a{
+    margin-right: 20px;
+    padding-top: 1.5rem;
+    align-content: center;
+}
+
+.icon-container a:hover{
+    color: #f60069;
+    cursor: pointer;
+}

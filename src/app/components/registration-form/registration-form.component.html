@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col s12 m8 offset-m2">
-    <h2 class="header center-align">Cadastrar Tarefa</h2>
     <div class="card">
       <div class="card-content">
         <form>
@@ -19,7 +18,21 @@
             </div>
           </div>
 
-          <!-- form buttons -->
+          <label>Selecione a Prioridade da Tarefa</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <a class="dropdown-trigger btn" routerLink='#' data-target="dropdown2">
+                {{ taskPriority }} <i class="material-icons right">arrow_drop_down</i>
+              </a>
+              <ul id="dropdown2" class="dropdown-content">
+                <li><a (click)="selectPriority(Priority.TASK_PRIORIRY_HIGH)">{{ Priority.TASK_PRIORIRY_HIGH }}</a></li>
+                <li><a (click)="selectPriority(Priority.TASK_PRIORIRY_MEDIUM)">{{ Priority.TASK_PRIORIRY_MEDIUM }}</a></li>
+                <li><a (click)="selectPriority(Priority.TASK_PRIORIRY_LOW)">{{ Priority.TASK_PRIORIRY_LOW }}</a></li>
+              </ul>
+              <input type="text" style="display: none;" [(ngModel)]="taskPriority" name="taskPriority">
+            </div>
+          </div>
+
           <div class="row">
             <div class="col s6 center-align">
               <button
