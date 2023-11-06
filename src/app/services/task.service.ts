@@ -22,6 +22,7 @@ export class TaskService {
       this.clearLocalStorage();
     });
   }
+
   addTask(newTask: Task) {
     newTask.id = this.taskIdCounter++;
     this.tasks.push(newTask);
@@ -31,16 +32,20 @@ export class TaskService {
 
     console.log('Tarefa adicionada:', newTask);
   }
+
   getTasks() {
     return this.tasks;
   }
+
   getTaskById(taskId: number | undefined): Task | undefined {
     return this.tasks.find((task) => task.id === taskId);
   }
+
   deleteTask(taskId: Number) {
     const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
     this.tasks.splice(taskIndex, 1);
   }
+
   updateTask(taskId: number, updatedTask: Task) {
     const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
 
@@ -52,6 +57,7 @@ export class TaskService {
       console.error('Tarefa não encontrada.');
     }
   }
+
   clearLocalStorage() {
     localStorage.removeItem('tasks');
     localStorage.removeItem('taskIdCounter');

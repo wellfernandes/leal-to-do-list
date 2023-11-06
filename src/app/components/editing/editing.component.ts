@@ -3,8 +3,8 @@ import { TaskService } from "../../services/task.service";
 import { Task } from "../../models/task";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Priority } from "../../constants/priority.constants";
-import {Paths} from "../../constants/paths.constants";
-import {AppTexts} from "../../constants/appTexts.constants";
+import { Paths } from "../../constants/paths.constants";
+import { AppTexts } from "../../constants/appTexts.constants";
 
 @Component({
   selector: 'app-editing',
@@ -21,12 +21,14 @@ export class EditingComponent {
       private router: Router,
       private route: ActivatedRoute
   ) {}
+
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.taskId = +params['id'];
       this.loadTask(this.taskId);
     });
   }
+
   loadTask(taskId: number) {
     this.task = this.taskService.getTaskById(taskId);
     this.updatedTask = { ...this.task } as Task;
@@ -52,15 +54,18 @@ export class EditingComponent {
       const instances = M.Dropdown.init(elems, options);
     }, 0);
   }
+
   updateTask() {
     if (this.updatedTask) {
       this.taskService.updateTask(this.taskId, this.updatedTask);
       this.router.navigate([Paths.LISTING_PAGE]).then(r => console.log(r));
     }
   }
+
   updateCancel() {
     this.router.navigate([Paths.LISTING_PAGE]).then(r => console.log(r));
   }
+
   changePriority(newPriority: string) {
     this.updatedTask.priority = newPriority;
   }

@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackgroundImageComponent implements OnInit{
   imageURL: string = './assets/images/bg-leal-todo-list.jpg';
+
   constructor(){}
+
   ngOnInit(): void {}
+
   getBgImage(){
     return{
       'background-image':
