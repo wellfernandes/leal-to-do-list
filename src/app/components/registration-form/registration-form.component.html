@@ -13,8 +13,12 @@
                 [(ngModel)]="taskName"
                 name="taskName"
                 #taskNameInput="ngModel"
+                (input)="onInputChange()"
               />
               <label for="icon_prefix">Nome da Tarefa</label>
+              <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+              </div>
             </div>
           </div>
 
@@ -38,6 +42,7 @@
               <button
                 class="btn waves-effect waves-light"
                 type="submit"
+                [disabled]="isButtonDisabled"
                 (click)="taskRegistration()"
               >
                 Cadastrar
