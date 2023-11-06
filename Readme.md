@@ -9,6 +9,7 @@ O objetivo do projeto **leal-to-do-list** é ser uma aplicação web que gerenci
 
 ## Protótipo
 
+[Figma](https://www.figma.com/file/Fx6p9FhgpXGgVskQWMRHMn/leal-to-do-list?type=design&node-id=0%3A1&mode=design&t=GMttoa5H23AW3AaG-1)
 --
 
 ## Checklist
