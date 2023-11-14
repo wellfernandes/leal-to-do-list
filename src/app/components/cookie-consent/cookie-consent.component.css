@@ -1,0 +1,33 @@
+:host {
+    position: absolute;
+    bottom: 05rem;
+    width: 100%;
+    z-index: 1000;
+}
+
+.card {
+    margin: 0 auto;
+    width: 50%;
+    color: #FFFFFF;
+    background-color: #F60069;
+    border-radius: 10px;
+}
+
+.card-content,
+.card-action {
+    text-align: center;
+}
+
+.choice-text {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.choice-buttons a:hover{
+    cursor: pointer;
+}

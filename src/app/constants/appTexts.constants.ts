@@ -3,4 +3,6 @@ export const AppTexts = {
     REGISTRATION_PAGE_TITLE: 'Cadastrar de Tarefa',
     LISTING_PAGE_TITLE: 'Lista de Tarefas',
     EDIT_PAGE_TITLE: 'Editar Tarefa',
+    PROHIBITED_WORD: 'Tarefa',
+    COOKIE_NOTICE: 'Este site utiliza cookies. Aceita o uso de cookies?',
 };

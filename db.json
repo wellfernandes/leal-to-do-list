@@ -1,20 +1,19 @@
 {
   "tasks": [
-    { "id": 1,
+    {
+      "id": 1,
       "name": "Learn AngularJS",
       "priority": "Alta"
     },
-    { "id": 2,
+    {
+      "id": 2,
       "name": "Learn Java",
       "priority": "Média"
     },
-    { "id": 3,
+    {
+      "id": 3,
       "name": "Do Golang exercises",
       "priority": "Baixa"
-    },
-    { "id": 4,
-      "name": "Do Frameworks exercises",
-      "priority": "Alta"
     }
   ]
 }

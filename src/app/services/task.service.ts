@@ -1,65 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Task } from "../models/task";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class TaskService {
-  private tasks: Task[] = [];
-  private taskIdCounter: number;
+  private apiUrl = 'http://localhost:3000/tasks';
 
-  constructor() {
-    const storedId = localStorage.getItem('taskIdCounter');
-    this.taskIdCounter = storedId ? +storedId : 1;
-    const storedTasks = localStorage.getItem('tasks');
+  constructor(private http: HttpClient) {}
 
-    if (storedTasks) {
-      this.tasks = JSON.parse(storedTasks);
-    }
-
-    window.addEventListener('beforeunload', () => {
-      this.clearLocalStorage();
-    });
+  getTasks(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  addTask(newTask: Task) {
-    newTask.id = this.taskIdCounter++;
-    this.tasks.push(newTask);
-
-    localStorage.setItem('taskIdCounter', this.taskIdCounter.toString());
-    localStorage.setItem('tasks', JSON.stringify(this.tasks));
-
-    console.log('Tarefa adicionada:', newTask);
+  getTaskById(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<any>(url);
   }
 
-  getTasks() {
-    return this.tasks;
+  addTask(task: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, task);
   }
 
-  getTaskById(taskId: number | undefined): Task | undefined {
-    return this.tasks.find((task) => task.id === taskId);
+  updateTask(task: any): Observable<any> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<any>(url, task);
   }
 
-  deleteTask(taskId: Number) {
-    const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
-    this.tasks.splice(taskIndex, 1);
-  }
-
-  updateTask(taskId: number, updatedTask: Task) {
-    const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
-
-    if (taskIndex !== -1) {
-      this.tasks[taskIndex] = updatedTask;
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
-      console.log('Tarefa atualizada:' + updatedTask.name);
-    } else {
-      console.error('Tarefa não encontrada.');
-    }
-  }
-
-  clearLocalStorage() {
-    localStorage.removeItem('tasks');
-    localStorage.removeItem('taskIdCounter');
+  deleteTask(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<any>(url);
   }
 }

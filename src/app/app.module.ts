@@ -13,6 +13,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ListingComponent } from './components/listing/listing.component';
 import { ListItemsComponent } from './components/list-items/list-items.component';
 import { EditingComponent } from './components/editing/editing.component';
+import { HttpClientModule } from "@angular/common/http";
+import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { EditingComponent } from './components/editing/editing.component';
     ListingComponent,
     ListItemsComponent,
     EditingComponent,
+    CookieConsentComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false,
     }),

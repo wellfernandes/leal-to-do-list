@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Priority } from "../../constants/priority.constants";
 import { AppTexts } from "../../constants/appTexts.constants";
 import { Errors } from "../../constants/errors.constants";
+import { TaskService } from "../../services/task.service";
 
 @Component({
   selector: 'app-registration-form',
@@ -18,21 +19,31 @@ export class RegistrationFormComponent implements AfterViewInit {
   isButtonDisabled: boolean = true;
   errorMessage: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private taskService: TaskService) {}
 
   ngAfterViewInit(): void {
-      const elems = document.querySelectorAll('.dropdown-trigger');
-      const instances = M.Dropdown.init(elems, {});
-    }
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    const instances = M.Dropdown.init(elems, {});
+  }
 
-  taskRegistration() {
+  async taskRegistration() {
     if (this.isButtonDisabled) {
       return;
-    }else{
+    } else {
       if (!(this.taskName === '')) {
         if (this.regex.test(this.taskName) && !this.taskName.includes('Tarefa')) {
-          this.taskAdded.emit({ name: this.taskName, priority: this.taskPriority });
-          this.errorMessage = '';
+          try {
+            const response = await this.taskService.addTask({ name: this.taskName, priority: this.taskPriority }).toPromise();
+
+            console.log('Tarefa cadastrada:', response);
+            alert('Tarefa cadastrada com sucesso!');
+
+            this.clearTaskName();
+            this.errorMessage = '';
+          } catch (error: any) {
+            console.error(Errors.REGISTERING_TASK_ERROR, error);
+            alert(Errors.REGISTERING_TASK_ERROR);
+          }
           return;
         }
       }
@@ -59,7 +70,7 @@ export class RegistrationFormComponent implements AfterViewInit {
       this.isButtonDisabled = true;
       this.errorMessage = Errors.EMPTY_FIELD_ERROR;
     } else {
-      if (this.regex.test(this.taskName) && !this.taskName.includes('Tarefa')) {
+      if (this.regex.test(this.taskName) && !this.taskName.includes(AppTexts.PROHIBITED_WORD)) {
         this.isButtonDisabled = false;
         this.errorMessage = '';
       } else {

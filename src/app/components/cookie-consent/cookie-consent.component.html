@@ -1,0 +1,16 @@
+<div *ngIf="!userChoice">
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content white-text">
+                    <span class="card-title">Aviso</span>
+                    <p>{{ AppTexts.COOKIE_NOTICE }}</p>
+                </div>
+                <div class="card-action choice-buttons">
+                    <a (click)="onCookieChange(true)">Aceito</a>
+                    <a (click)="onCookieChange(false)">Não Aceito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

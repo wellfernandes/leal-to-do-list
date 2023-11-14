@@ -3,6 +3,7 @@ import { RegistrationFormComponent } from "../registration-form/registration-for
 import { Task } from "../../models/task";
 import { TaskService } from "../../services/task.service";
 import { AppTexts } from "../../constants/appTexts.constants";
+import { Errors } from "../../constants/errors.constants";
 
 @Component({
   selector: 'app-registration',
@@ -17,17 +18,21 @@ export class RegistrationComponent {
 
   constructor(private taskService: TaskService) {}
 
-  addTask(taskName: string, taskPriority: string) {
-    this.taskService.addTask(new Task(this.counterId, taskName, taskPriority));
-    this.counterId++;
-
-    window.alert('Tarefa ' + taskName + ' cadastrada!');
-    this.clearTaskNameInRegistrationForm()
+  async addTask(taskName: string, taskPriority: string) {
+    try {
+      const response = await this.taskService.addTask(new Task(this.counterId, taskName, taskPriority)).toPromise();
+      console.log('Tarefa cadastrada:', response);
+      window.alert('Tarefa ' + taskName + ' cadastrada!');
+      this.counterId++;
+      this.clearTaskNameInRegistrationForm();
+    } catch (error) {
+      console.error(Errors.REGISTERING_TASK_ERROR, error);
+    }
   }
 
   clearTaskNameInRegistrationForm() {
     this.childComponent.clearTaskName();
   }
 
-    protected readonly AppTexts = AppTexts;
+  protected readonly AppTexts = AppTexts;
 }
