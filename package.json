@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href /leal-to-do-list/",
+    "build": "ng build --base-href /leal-to-do-list/",
     "ghpages": "angular-cli-ghpages --dir=dist/leal-to-do-list",
     "deploy": "npm run build && npm run ghpages",
     "watch": "ng build --watch --configuration development",
