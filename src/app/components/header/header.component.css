@@ -3,4 +3,16 @@ nav {
     color: #FFFFFF;
     position: relative;
     z-index: 2;
-  }
+}
+
+.display-time{
+    position: absolute;
+    right: 01rem;
+    z-index: 3;
+}
+
+.display-icon-time{
+    position: absolute;
+    right: 04rem;
+    z-index: 3;
+}

@@ -13,6 +13,11 @@
     <a href="#" class="brand-logo center">
       <img src="./assets/images/logo-leal-to-do-list.png" alt="Leal" width="98" height="71">
     </a>
+
+    <div class="display-time">
+      <i class="material-icons display-icon-time">schedule</i>
+      <span *ngIf="currentTime">{{ currentTime | date: 'HH:mm:ss' }}</span>
+    </div>
   </div>
 </nav>
 
