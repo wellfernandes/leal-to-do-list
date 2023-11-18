@@ -57,5 +57,15 @@ ng serve --open
 ```
 5. Caso o seu navegador não abra automaticamente, acesse o endereço `http://localhost:4200/` em seu navegador para visualizar a aplicação executando localmente.
 
+## Resolução de Problemas
+1. Caso o comando json-server não seja encontrado pela IDE:
+- Abra o terminal e execute o comando e execute o comando como administrador (sudo no Linux ou macOS):
+ ```bash
+npm install -g json-server
+```
+- Logo após execute o novamente o comando:
+ ```bash
+json-server --watch db.json --routes routes.json
+```
 ---
 [Linkedin](https://www.linkedin.com/in/wellitonfernandes/) - [Contato](https://wellitonleal.com.br) 
