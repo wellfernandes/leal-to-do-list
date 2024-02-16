@@ -13,6 +13,11 @@ O objetivo do projeto **leal-to-do-list** é ser uma aplicação web que gerenci
 [Figma](https://www.figma.com/file/Fx6p9FhgpXGgVskQWMRHMn/leal-to-do-list?type=design&node-id=0%3A1&mode=design&t=GMttoa5H23AW3AaG-1)
 --
 
+## Apresentação
+
+[Assistir](https://youtu.be/WpsPZAFvMqU)
+--
+
 ## Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
