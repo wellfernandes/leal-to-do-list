@@ -1,5 +1,7 @@
 # leal-to-do-list
 
+![leal-to-do-list](img/leal-to-do-list.png)
+
 O objetivo do projeto **leal-to-do-list** é ser uma aplicação web que gerencie listas de tarefas de maneira simplificada.
 
 
